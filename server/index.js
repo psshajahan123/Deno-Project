@@ -9,7 +9,8 @@ app.use(cors());
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 
-const router = require("./router");
+const router = express.Router();
+
 app.use(router);
 const server = http.createServer(app);
 
@@ -24,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
   });
 } else {
   app.get("/", (req, res) => {
-    res.send("API is running");
+    res.send({ response: "Server is up and running." }).status(200);
   });
 }
 
