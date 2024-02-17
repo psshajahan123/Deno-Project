@@ -1,0 +1,74 @@
+  .chat-app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #484868;
+  }
+  
+  .chat-left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 8px;
+    height: 60%;
+    width: 35%;
+  }
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    .chat-app-container {
+      height: 100%;
+    }
+  
+    .chat-left-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  @media (min-width: 480px) and (max-width: 1200px) {
+    .chat-left-containers {
+      width: 70%;
+    }
+  }
+
+  .room-info-bar {
+    width: 140px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+    color: #FFFFFF;
+  }
+
+  .room-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+
+  .room-close-container {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .room-close-icon {
+    color: #FFFFFF;
+    font-size: 22px;
+    margin-right: 5px;
+  }
+
+  .room-name {
+    font-size: 20px;
+    color: black;
+    font-family: "Roboto";
+    font-weight: 700;
+    color: #cfc7c7;
+  }
+
+  
