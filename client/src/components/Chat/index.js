@@ -8,7 +8,7 @@ import { MdAdjust, MdClose } from "react-icons/md";
 
 import "./index.css";
 
-const socket = io.connect("http://localhost:5001");
+const socket = io.connect("https://deno-project.onrender.com/");
 
 const Chat = () => {
   const [name, setName] = useState("");
