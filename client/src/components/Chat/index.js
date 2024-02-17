@@ -74,7 +74,7 @@ const Chat = () => {
         <Messages messages={messages} name={name} />
         <form className="form">
           <input
-            className="input"
+            className="text-input"
             type="text"
             placeholder="Type a message..."
             value={message}
@@ -83,7 +83,7 @@ const Chat = () => {
               event.key === "Enter" ? sendMessage(event) : null
             }
           />
-          <button className="sendButton" onClick={(e) => sendMessage(e)}>
+          <button className="send-button" onClick={(e) => sendMessage(e)}>
             Send
           </button>
         </form>

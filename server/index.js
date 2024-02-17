@@ -3,6 +3,7 @@ const app = express();
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
+const path = require("path");
 
 app.use(cors());
 
@@ -11,6 +12,23 @@ const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const router = require("./router");
 app.use(router);
 const server = http.createServer(app);
+
+//........................Deployment.................................
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/client/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running");
+  });
+}
+
+//........................Deployment.................................
 
 const io = new Server(server, {
   cors: {

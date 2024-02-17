@@ -6,9 +6,6 @@ import "./index.css";
 
 const CurrentUsers = ({ users }) => (
   <div className="textContainer">
-    <div>
-      <h1>Chat Application</h1>
-    </div>
     {users ? (
       <div>
         <h1>People currently chatting:</h1>
