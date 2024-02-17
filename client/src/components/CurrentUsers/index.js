@@ -5,15 +5,15 @@ import { MdAccountCircle } from "react-icons/md";
 import "./index.css";
 
 const CurrentUsers = ({ users }) => (
-  <div className="textContainer">
+  <div className="text-container">
     {users ? (
       <div>
-        <h1>People currently chatting:</h1>
-        <div className="activeContainer">
+        <p className="online-text">Online Users:</p>
+        <div className="active-container">
           {users.map(({ name }) => (
-            <div key={name} className="activeItem">
-              {name}
-              <MdAccountCircle />
+            <div key={name} className="active-item">
+              <MdAccountCircle className="active-name-icon" />
+              <p className="names">{name}</p>
             </div>
           ))}
         </div>

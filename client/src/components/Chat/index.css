@@ -13,33 +13,39 @@
     background: #FFFFFF;
     border-radius: 8px;
     height: 60%;
-    width: 50%;
+    width: 60%;
   }
-  
-  @media (min-width: 320px) and (max-width: 480px) {
+  .chat-right-container {}
+
+  @media screen and (max-width: 768px) {
     .chat-app-container {
-      height: 100%;
+      height: 100vh;
     }
-  
     .chat-left-container {
-      width: 100%;
+      width: 85%;
       height: 100%;
     }
-  }
-  
-  @media (min-width: 480px) and (max-width: 1200px) {
-    .chat-left-containers {
-      width: 70%;
+    .chat-right-container {
+      width: 15%;
+      height: 100%;
     }
   }
 
+
   .room-info-bar {
-    width: 140px;
+    width: 100%;
     height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: blueviolet;
     color: #FFFFFF;
+    border-top-left-radius: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .room-info-bar {
+      border-top-right-radius: 0px;
+    }
   }
 
   .room-container {
@@ -69,22 +75,43 @@
     font-family: "Roboto";
     font-weight: 700;
     color: #cfc7c7;
+    margin-left: 10px;
   }
 
   
 .form {
   width: 100%;
-  margin: 5px;
+  height: 55px;
+  background-color: #acacee;
+  padding-left: 8px;
+  padding-top: 6px;
+  border-bottom-left-radius: 8px;
 }
 .text-input {
   width: 70%;
   height: 40px;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid #cec6c6;
+  outline-width: 0px;
+  font-size: 16px;
+  padding-left: 5px;
 }
 .send-button {
   height: 40px;
+  width: 60px;
   font-size: 18px;
   font-family: "Roboto";
   font-weight: 500;
-  background-color: crimson;
+  background-color: rgb(141, 9, 35);
   color: #ffffff;
+  border-radius: 0px 10px 10px 0px;
+  border-width: 0px;
+  padding-top: 3px;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    border-bottom-left-radius: 0px;
+  }
 }

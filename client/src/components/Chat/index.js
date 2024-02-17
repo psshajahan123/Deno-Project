@@ -5,6 +5,7 @@ import io from "socket.io-client";
 import CurrentUsers from "../CurrentUsers";
 import Messages from "../Messages/Messages";
 import { MdAdjust, MdClose } from "react-icons/md";
+import { IoSend } from "react-icons/io5";
 
 import "./index.css";
 
@@ -84,7 +85,7 @@ const Chat = () => {
             }
           />
           <button className="send-button" onClick={(e) => sendMessage(e)}>
-            Send
+            <IoSend />
           </button>
         </form>
         {/* <Input
@@ -93,7 +94,7 @@ const Chat = () => {
           sendMessage={sendMessage}
         /> */}
       </div>
-      <CurrentUsers users={users} />
+      <CurrentUsers className="chat-right-container" users={users} />
     </div>
   );
 };
