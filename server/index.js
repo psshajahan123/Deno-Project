@@ -6,12 +6,13 @@ const cors = require("cors");
 const path = require("path");
 
 app.use(cors());
+app.use(express.json())
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 
 const router = express.Router();
 
-app.use(router);
+
 const server = http.createServer(app);
 
 //........................Deployment.................................
@@ -20,17 +21,17 @@ const __dirname1 = path.resolve();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname1, "/client/build")));
 
-  app.get("*", (req, res) => {
+  router.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"));
   });
 } else {
-  app.get("/", (req, res) => {
+  router.get("/", (req, res) => {
     res.send({ response: "Server is up and running." }).status(200);
   });
 }
 
 //........................Deployment.................................
-
+app.use(router);
 const io = new Server(server, {
   cors: {
     origin: "http://localhost:3004",
