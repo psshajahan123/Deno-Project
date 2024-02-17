@@ -1,7 +1,7 @@
-##TO SETUP Clint
+# TO SETUP Client
 
-# cd client && npm start
+#3 cd client && npm start
 
-## To Setup server 
+# To Setup server 
 
-# cd server && npm start
+#3 cd server && npm start
