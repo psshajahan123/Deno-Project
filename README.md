@@ -1,7 +1,11 @@
 # TO SETUP Client
 
-## cd client && npm start
+## 1. cd client
+## 2. npm install
+## 3. npm start
 
 # To Setup server 
 
-## cd server && npm start
+## 1. cd server
+## 2. npm install
+## 3. npm start 
