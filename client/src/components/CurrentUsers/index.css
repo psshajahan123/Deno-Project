@@ -1,8 +1,8 @@
 .text-container {
     display: flex;
     flex-direction: column;
-    width: 18%;
-    height: 60%;
+    width: 25%;
+    height: 100%;
     background-color: rgb(54, 63, 63);
     border-radius: 0px 10px 10px 0px;
     padding: 10px;

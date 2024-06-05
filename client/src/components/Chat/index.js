@@ -4,7 +4,9 @@ import io from "socket.io-client";
 
 import CurrentUsers from "../CurrentUsers";
 import Messages from "../Messages/Messages";
-import { MdAdjust, MdClose } from "react-icons/md";
+import { MdAdjust } from "react-icons/md";
+import { ImExit } from "react-icons/im";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 import { IoSend } from "react-icons/io5";
 
 import "./index.css";
@@ -17,6 +19,7 @@ const Chat = () => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [sidenavStatus, setSidenavStatus] = useState(false);
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
@@ -52,6 +55,14 @@ const Chat = () => {
     }
   };
 
+  const changeSidenav = () => {
+    if (sidenavStatus === false) {
+      setSidenavStatus(true);
+    } else {
+      setSidenavStatus(false);
+    }
+  };
+
   const renderActiveRoomSection = (room) => {
     return (
       <div className="room-info-bar">
@@ -61,8 +72,14 @@ const Chat = () => {
         </div>
         <div className="room-close-container">
           <a href="/">
-            <MdClose className="room-close-icon" />
+            <ImExit className="room-close-icon" />
           </a>
+        </div>
+        <div className="room-close-container">
+          <BsFillPersonLinesFill
+            onClick={changeSidenav}
+            className="room-close-icon"
+          />
         </div>
       </div>
     );
@@ -94,7 +111,9 @@ const Chat = () => {
           sendMessage={sendMessage}
         /> */}
       </div>
-      <CurrentUsers className="chat-right-container" users={users} />
+      {sidenavStatus ? (
+        <CurrentUsers className="sidenav" users={users} />
+      ) : null}
     </div>
   );
 };
